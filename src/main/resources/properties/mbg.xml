@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+  <context id="MySqlTables" targetRuntime="MyBatis3">
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://localhost:3306/offtheground?useUnicode=true"
+        userId="root"
+        password="123456">
+    </jdbcConnection>
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+    <javaModelGenerator targetPackage="otg.bean" targetProject=".\src\main\java">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="properties.mybatis.mapper"  targetProject=".\src\main\resources">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <javaClientGenerator type="XMLMAPPER" targetPackage="otg.dao"  targetProject=".\src\main\java">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+    
+    <table tableName="challenge" domainObjectName="Challenge"></table>
+    <table tableName="challenge_operation" domainObjectName="ChallengeOperation"></table>
+    <table tableName="city" domainObjectName="City"></table>
+    <table tableName="code" domainObjectName="Code"></table>
+    <table tableName="district" domainObjectName="District"></table>
+    <table tableName="domain" domainObjectName="Domain"></table>
+    <table tableName="location" domainObjectName="Location"></table>
+    <table tableName="location_operation" domainObjectName="LocationOperation"></table>
+    <table tableName="otg_user" domainObjectName="OtgUser"></table>
+    <table tableName="picture" domainObjectName="Picture"></table>
+    <table tableName="provience" domainObjectName="Provience"></table>
+    <table tableName="resource_operation" domainObjectName="ResourceOperation"></table>
+    <table tableName="user_challenge" domainObjectName="UserChallenge"></table>
+    <table tableName="user_operation" domainObjectName="UserOperation"></table>
+    <table tableName="video" domainObjectName="Video"></table>
+    <!-- 
+    <table schema="DB2ADMIN" tableName="ALLTYPES" domainObjectName="Customer" >
+      <property name="useActualColumnNames" value="true"/>
+      <generatedKey column="ID" sqlStatement="DB2" identity="true" />
+      <columnOverride column="DATE_FIELD" property="startDate" />
+      <ignoreColumn column="FRED" />
+      <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />
+    </table>
+ 	-->
+  </context>
+</generatorConfiguration>
